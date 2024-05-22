@@ -1,0 +1,186 @@
+site_name: PROINSPECT User Manual
+site_url: https://example.com/
+nav:
+  - Home: index.md
+  - Getting started:
+    - Load and Save recipe: topics\GettingStarted\Save recipe.md
+    - Locate and Inspect: topics\GettingStarted\Locate part.md
+    - Train: topics\GettingStarted\Train.md
+    - Run recipe: topics\GettingStarted\Run recipe.md
+    - Calibration: topics\GettingStarted\Calibrate.md
+    - Input/Output: topics\GettingStarted\Input Output.md
+  - PROINSPECT:
+    - Process: topics\Process\Process.md
+    - Online setup: topics\Process\Online Setup.md
+    - Validation: topics\Recipe\Validation.md
+    - Statistics:
+      - Statistics: topics\Statistics\Statistics.md
+      - Run statistics: topics\Statistics\Run Statistics.md
+      - Statistics Alarms: topics\Statistics\Statistics Alarms.md
+      - Batch: topics\Statistics\Batch.md
+    - Sharing: topics\Recipe\Sharing.md
+    - Sampling: topics\Recipe\Sampling.md
+    - Console: topics\Console\Console.md
+    - Users: 
+      - Users: topics\Users\Utenti.md
+      - Permission: topics\Users\Permission.md
+      - Permissions update: topics\Users\Permissions update.md
+    - Image History: topics\ProInspect\Image History.md
+    - Display settings: topics\Console\Display settings.md
+    - Settings: topics\Windows\dialog_settings.md
+    - Report: topics\Windows\dialog_report.md
+    - Geometry: topics\Recipe\Geometry.md
+  - Tools:
+    - Basic tools:
+      - Basic tools: topics\Tools_Reference\Vision_Tools\Image\Base tools.md
+      - Fixture: topics\Tools_Reference\Vision_Tools\Image\Fixture.md
+      - Group: topics\Tools_Reference\Vision_Tools\Image\Group.md
+      - Image Unwrap: topics\Tools_Reference\Vision_Tools\Image\Image_Unwrap.md
+      - Image Wrap: topics\Tools_Reference\Vision_Tools\Image\Image_Wrap.md
+      - Reference Image: topics\Tools_Reference\Vision_Tools\Image\Reference_Image.md
+      - View: topics\Tools_Reference\Vision_Tools\Image\View.md
+    - Calibration:
+      - Calibration: topics\Tools_Reference\Calibration\Calibration.md
+      - Automatic CheckBoard Calibration: topics\Tools_Reference\Calibration\Automatic_Check_Board_Calibration.md
+      - Automatic Grid Calibration: topics\Tools_Reference\Calibration\Automatic_Grid_Calibration.md
+      - Axes Calibration: topics\Tools_Reference\Calibration\Axes_Calibration.md
+      - Find Point Calibration: topics\Tools_Reference\Calibration\Find_Point_Calibration.md
+      - Grid Calibration: topics\Tools_Reference\Calibration\Grid_Calibration.md
+      - Grid Calibration 2: topics\Tools_Reference\Calibration\Grid_Calibration_2.md      
+      - Point Calibration: topics\Tools_Reference\Calibration\Point_Calibration.md     
+      - Raw Calibration: topics\Tools_Reference\Calibration\Raw_Calibration.md  
+      - Z Calibration: topics\Tools_Reference\Calibration\Z_Calibration.md           
+    - Vision Tools:
+      - Vision Tools: topics\Tools_Reference\Vision_Tools\Vision_Tools.md
+      - Blob: 
+        - Blob: topics\Tools_Reference\Vision_Tools\Blob\Blob.md
+        - Blob Inspection: topics\Tools_Reference\Vision_Tools\Blob\Blob_Inspection.md
+        - Blob Measure: topics\Tools_Reference\Vision_Tools\Blob\Blob_Measure.md
+        - Color Blob Inspection: topics\Tools_Reference\Vision_Tools\Blob\Color_Blob_Inspection.md
+      - Edges:
+        - Edges: topics\Tools_Reference\Vision_Tools\Edge\Edges.md
+        - Caliper: topics\Tools_Reference\Vision_Tools\Edge\Caliper.md
+        - Circle Finder: topics\Tools_Reference\Vision_Tools\Edge\Circle_Finder.md
+        - Line Detect: topics\Tools_Reference\Vision_Tools\Edge\Line_Detect.md
+        - Line Finder: topics\Tools_Reference\Vision_Tools\Edge\Line_Finder.md
+        - Multiple Polar Caliper: topics\Tools_Reference\Vision_Tools\Edge\Multiple_Polar_Caliper.md
+        - Rectangle Finder: topics\Tools_Reference\Vision_Tools\Edge\Rectangle_Finder.md
+      - Flaw Detection:
+        - Flaw Detection: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Flaw_Detection.md
+        - Boundary Inspect: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Boundary_Inspect.md  
+        - Color Match: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Color_Match.md
+        - Color TInspect: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Color_TInspect.md
+        - Contour Inspect: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Contour_Inspect.md
+        - Contour Inspect Ex: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Contour_InspectEx.md
+        - Finger Inspect: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Finger_Inspect.md
+        - Line Breakage: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Line_Breakage.md
+        - PatInspect: topics\Tools_Reference\Vision_Tools\Flaw_Detection\PatInspect.md
+        - Polar Inspection: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Polar_Inspection.md
+        - Thickness Inspection: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Thickness_Inspection.md
+        - Thin Finger Inspect: topics\Tools_Reference\Vision_Tools\Flaw_Detection\Thin_Finger_Inspect.md
+        - TInspect: topics\Tools_Reference\Vision_Tools\Flaw_Detection\TInspect.md
+      - Geometry:
+        - Geometry: topics\Tools_Reference\Geometry\Geometry.md
+        - Circle Fit: topics\Tools_Reference\Geometry\Circle_Fit.md
+        - Distance Point to Line: topics\Tools_Reference\Geometry\Distance_Point_to_Line.md    
+        - Distance Point to Point: topics\Tools_Reference\Geometry\Distance_Point_to_Point.md 
+        - Line Fit: topics\Tools_Reference\Geometry\Line_Fit.md
+        - Lines Intersection: topics\Tools_Reference\Geometry\Lines_Intersection.md   
+        - Point Fit: topics\Tools_Reference\Geometry\Point_Fit.md    
+      - Grids:
+        - Grids: topics\Tools_Reference\Grids\Grids.md
+        - General Grid: topics\Tools_Reference\Grids\General_Grid.md   
+        - Points Grid: topics\Tools_Reference\Grids\Points_Grid.md      
+        - Polar Grid: topics\Tools_Reference\Grids\Polar_Grid.md      
+      - Histogram:
+        - Histogram: topics\Tools_Reference\Vision_Tools\Histogram\Histogram.md     
+        - Color Light Meter: topics\Tools_Reference\Vision_Tools\Histogram\Color_Light_Meter.md    
+        - Light Meter: topics\Tools_Reference\Vision_Tools\Histogram\Light_Meter.md   
+        - Statistic Color: topics\Tools_Reference\Vision_Tools\Histogram\Statistic_Color.md
+      - Identification:
+        - Identification: topics\Tools_Reference\Vision_Tools\Identification\Identification.md   
+        - BarCode: topics\Tools_Reference\Vision_Tools\Identification\BarCode.md
+        - DataMatrix: topics\Tools_Reference\Vision_Tools\Identification\DataMatrix.md
+        - PDF417: topics\Tools_Reference\Vision_Tools\Identification\PDF417.md
+        - QRCode: topics\Tools_Reference\Vision_Tools\Identification\QRCode.md   
+      - Mathematics                  :
+        - Mathematics: topics\Tools_Reference\Mathematics\Mathematics.md
+        - Arithmetic: topics\Tools_Reference\Mathematics\Arithmetic.md
+        - Best: topics\Tools_Reference\Mathematics\Best.md
+        - Boolean: topics\Tools_Reference\Mathematics\Boolean.md
+      - Miscellaneous:
+        - Miscellaneous: topics\Tools_Reference\Vision_Tools\Miscellaneous\Miscellaneous.md
+        - CAD: topics\Tools_Reference\Vision_Tools\Miscellaneous\CAD.md
+        - Compute: topics\Tools_Reference\Vision_Tools\Miscellaneous\Compute.md
+        - Compute XML Config: topics\Tools_Reference\Vision_Tools\Miscellaneous\Compute_XML_Config.md
+        - Connector: topics\Tools_Reference\Vision_Tools\Miscellaneous\Connector.md
+        - Cycle Index: topics\Tools_Reference\Vision_Tools\Miscellaneous\Cycle_Index.md
+        - Cycle Index Specs: topics\Tools_Reference\Vision_Tools\Miscellaneous\Cycle_Index_Specs.md
+        - DMCTCompare: topics\Tools_Reference\Vision_Tools\Miscellaneous\DMCTCompare.md
+        - Lead Inspection: topics\Tools_Reference\Vision_Tools\Miscellaneous\Lead_Inspection.md
+        - Point: topics\Tools_Reference\Vision_Tools\Miscellaneous\Point.md
+        - Scrap Maker: topics\Tools_Reference\Vision_Tools\Miscellaneous\Scrap_Maker.md
+        - Sharpness: topics\Tools_Reference\Vision_Tools\Miscellaneous\Sharpness.md
+        - SuperConnector: topics\Tools_Reference\Vision_Tools\Miscellaneous\SuperConnector.md
+        - XML: topics\Tools_Reference\Vision_Tools\Miscellaneous\XML.md
+      - OCR and OCV:
+        - OCR and OCV: topics\Tools_Reference\Vision_Tools\OCR_and_OCV\OCR_and_OCV.md
+        - OCR: topics\Tools_Reference\Vision_Tools\OCR_and_OCV\OCR.md
+        - OCV: topics\Tools_Reference\Vision_Tools\OCR_and_OCV\OCV.md
+      - Pattern Match:
+        - Pattern Match: topics\Tools_Reference\Vision_Tools\Pattern_Match\Pattern_Match.md
+        - Multimodel: topics\Tools_Reference\Vision_Tools\Pattern_Match\Multimodel.md
+        - PatMax: topics\Tools_Reference\Vision_Tools\Pattern_Match\PatMax.md
+        - Polar Finder: topics\Tools_Reference\Vision_Tools\Pattern_Match\Polar_Finder.md
+        - RSI Search: topics\Tools_Reference\Vision_Tools\Pattern_Match\RSI_Search.md
+        - Search: topics\Tools_Reference\Vision_Tools\Pattern_Match\Search.md
+  - Communication:
+    - Communication: topics\Chapters\Communication.md
+    - OPCUA: topics\Opc\ProInspect_OPCUA_Server.md    
+  - Appendix:
+    - Bar code reader: topics\Recipe\Bar_code_reader.md
+    - VC200:
+      - VC200: topics\VCxxx\Vision_Controller_VC200.md
+      - CPRTVC100: topics\VCxxx\CPRTVC100.md
+      - RTVC100ProcessServerServ: topics\VCxxx\RTVC100ProcessServerServ.md
+theme: material
+#plugins:
+  #- with-pdf:
+        #author: Emanuela Baldon
+        #copyright: Univision s.r.l.
+        #cover: true
+        #back_cover: true
+        #cover_title: PROINSPECT
+        #cover_subtitle: User manual
+        #custom_template_path: TEMPLATES PATH
+        #
+        #toc_title: TOC TITLE TEXT
+        #heading_shift: false
+        #toc_level: 3
+        #ordered_chapter_level: 2
+        #excludes_children:
+        #    - 'release-notes/:upgrading'
+        #    - 'release-notes/:changelog'
+        #
+        #exclude_pages:
+        #    - 'bugs/'
+        #    - 'appendix/contribute/'
+        #convert_iframe:
+        #    - src: IFRAME SRC
+        #      img: POSTER IMAGE URL
+        #      text: ALTERNATE TEXT
+        #    - src: ...
+        #two_columns_level: 3
+        #
+        #render_js: true
+        #headless_chrome_path: headless-chromium
+        #
+        #output_path: any-place/document.pdf
+        #enabled_if_env: ENABLE_PDF_EXPORT
+        #
+        #debug_html: true
+        #show_anchors: true
+        #verbose: true
+#extra_css:
+#  - css/custom.css
+

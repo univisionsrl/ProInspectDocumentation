@@ -1,0 +1,24 @@
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101.49 142.55">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #3a8dde;
+      }
+    </style>
+  </defs>
+  <title>XTRA</title>
+  <g>
+    <path class="cls-1" d="M105.4,87.11v79.14c0,19.93,9.38,29.11,25.1,29.11,24.31,0,25.32-19.22,25.32-30.52V87.11H139V160.6c-.11,7.91-.11,15.68-8.37,15.68-9.16,0-8.36-12.15-8.36-20.2v-69Z" transform="translate(-54.34 -52.81)"/>
+    <g>
+      <rect class="cls-2" x="34.02" y="17.01" width="17.01" height="17.01"/>
+      <rect class="cls-2" x="17.01" width="17.01" height="17.01"/>
+      <rect class="cls-2" x="17.01" y="34.01" width="17.01" height="17.01"/>
+      <rect class="cls-2" y="17.01" width="17.01" height="17.01"/>
+    </g>
+  </g>
+</svg>
