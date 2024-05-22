@@ -1,0 +1,4301 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/topics/Tools_Reference/Vision_Tools/OCR_and_OCV/OCR/">
+      
+      
+        <link rel="prev" href="../OCR_and_OCV/">
+      
+      
+        <link rel="next" href="../OCV/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+    
+    
+      
+        <title>OCR - PROINSPECT User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ocr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="PROINSPECT User Manual" class="md-header__button md-logo" aria-label="PROINSPECT User Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROINSPECT User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OCR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="PROINSPECT User Manual" class="md-nav__button md-logo" aria-label="PROINSPECT User Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PROINSPECT User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GettingStarted/Save%20recipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Load and Save recipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GettingStarted/Locate%20part/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Locate and Inspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GettingStarted/Train/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Train
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GettingStarted/Run%20recipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run recipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GettingStarted/Calibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GettingStarted/Input%20Output/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Input/Output
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PROINSPECT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            PROINSPECT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Process/Process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Process/Online%20Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Online setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Recipe/Validation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Statistics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Statistics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Statistics/Statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Statistics/Run%20Statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Statistics/Statistics%20Alarms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistics Alarms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Statistics/Batch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Batch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Recipe/Sharing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Recipe/Sampling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sampling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Console/Console/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Console
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Users
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Users/Utenti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Users
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Users/Permission/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Permission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Users/Permissions%20update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Permissions update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProInspect/Image%20History/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Console/Display%20settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Windows/dialog_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Windows/dialog_report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Recipe/Geometry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Basic tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Image/Base%20tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Image/Fixture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fixture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Image/Group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Image/Image_Unwrap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Unwrap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Image/Image_Wrap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Wrap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Image/Reference_Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Image/View/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Calibration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Calibration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Automatic_Check_Board_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic CheckBoard Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Automatic_Grid_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic Grid Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Axes_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Axes Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Find_Point_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Find Point Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Grid_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grid Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Grid_Calibration_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grid Calibration 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Point_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Raw_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raw Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Calibration/Z_Calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vision Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vision Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vision_Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vision Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blob
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blob
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Blob/Blob/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blob
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Blob/Blob_Inspection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blob Inspection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Blob/Blob_Measure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blob Measure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Blob/Color_Blob_Inspection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Color Blob Inspection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Edges
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Edges
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Edge/Edges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Edge/Caliper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caliper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Edge/Circle_Finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Circle Finder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Edge/Line_Detect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Line Detect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Edge/Line_Finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Line Finder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Edge/Multiple_Polar_Caliper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Polar Caliper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Edge/Rectangle_Finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rectangle Finder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_4" id="__nav_4_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Flaw Detection
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Flaw Detection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Flaw_Detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flaw Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Boundary_Inspect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boundary Inspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Color_Match/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Color Match
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Color_TInspect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Color TInspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Contour_Inspect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contour Inspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Contour_InspectEx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contour Inspect Ex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Finger_Inspect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Finger Inspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Line_Breakage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Line Breakage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/PatInspect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatInspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Polar_Inspection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polar Inspection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Thickness_Inspection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thickness Inspection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/Thin_Finger_Inspect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thin Finger Inspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flaw_Detection/TInspect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TInspect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_5" id="__nav_4_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Geometry/Geometry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Geometry/Circle_Fit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Circle Fit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Geometry/Distance_Point_to_Line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distance Point to Line
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Geometry/Distance_Point_to_Point/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distance Point to Point
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Geometry/Line_Fit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Line Fit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Geometry/Lines_Intersection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lines Intersection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Geometry/Point_Fit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Fit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Grids
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Grids
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Grids/Grids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Grids/General_Grid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Grid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Grids/Points_Grid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Points Grid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Grids/Polar_Grid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polar Grid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_7" id="__nav_4_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Histogram
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Histogram
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Histogram/Histogram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Histogram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Histogram/Color_Light_Meter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Color Light Meter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Histogram/Light_Meter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Light Meter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Histogram/Statistic_Color/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistic Color
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_8" id="__nav_4_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Identification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Identification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Identification/Identification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Identification/BarCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BarCode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Identification/DataMatrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataMatrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Identification/PDF417/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDF417
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Identification/QRCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QRCode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_9" id="__nav_4_3_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Mathematics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics/Mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics/Arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics/Best/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics/Boolean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boolean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_10" id="__nav_4_3_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Miscellaneous/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/CAD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Compute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Compute_XML_Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute XML Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Connector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Cycle_Index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cycle Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Cycle_Index_Specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cycle Index Specs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/DMCTCompare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DMCTCompare
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Lead_Inspection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lead Inspection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Point/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Scrap_Maker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scrap Maker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Sharpness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharpness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/SuperConnector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SuperConnector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/XML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_11" id="__nav_4_3_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OCR and OCV
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            OCR and OCV
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OCR_and_OCV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OCR and OCV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    OCR
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    OCR
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    <span class="md-ellipsis">
+      More
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-font" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn font
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learn font">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consoles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consoles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-single-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit single character
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-multiple-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit multiple characters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OCV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OCV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_12" id="__nav_4_3_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pattern Match
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            Pattern Match
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pattern_Match/Pattern_Match/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pattern Match
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pattern_Match/Multimodel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multimodel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pattern_Match/PatMax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatMax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pattern_Match/Polar_Finder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polar Finder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pattern_Match/RSI_Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RSI Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pattern_Match/Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Communication
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Communication
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Chapters/Communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Opc/ProInspect_OPCUA_Server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OPCUA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Appendix
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Recipe/Bar_code_reader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bar code reader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VC200
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            VC200
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../VCxxx/Vision_Controller_VC200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VC200
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../VCxxx/CPRTVC100/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPRTVC100
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../VCxxx/RTVC100ProcessServerServ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RTVC100ProcessServerServ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    <span class="md-ellipsis">
+      More
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-font" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn font
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learn font">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consoles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consoles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-single-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit single character
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-multiple-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit multiple characters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ocr">OCR</h1>
+<p><img alt="" src="../../../../../img/x_Graphics/Tools/UvfCvlOcr-0.png" /></p>
+<h2 id="overview">Overview</h2>
+<p>The OCR tool performs optical character recognition (OCR), a process for recognizing characters. In order to accommodate the wide variation in the appearances of characters in different applications, the OCR API is split into three separate vision tools:</p>
+<ul>
+<li>Character segmentation takes an image as input and produces a set of segmented character images.</li>
+<li>Classification takes the segmented character images and determines what character each corresponds to.</li>
+<li>Fielding takes the entire result string from the classifier and checks to see whether the string matches what the user expected as a good result.</li>
+</ul>
+<p>The OCR Tool tries to read a paragraph: a string or a set of strings containing characters using the same font. For each line the ROI (region of interest) has to be set. Increase parameter number of regions for several lines. The ROI is specified as an affine rectangle that specifies the approximate location, angle, and skew of the line of text. The ROI must be entirely contained within the input image. The x axis of the affine rectangle should be parallel to the baseline of the text, and the y axis should be parallel to the vertical strokes of the characters. The ROI is expected to contain only the one line of text to be read and some surrounding background and should be larger than the line of text by at least half a character width on all sides if possible.</p>
+<p>The OCR Classifier takes a rectified image of a character and returns the best matching character, the score of that best matching character, and the confidence of that best matching character. The OCR Classifier can be incrementally trained with additional training images at any time. The OCR Classifier determines not only the classification (character code/instance) of the run-time rectified image, but it also reports the score of that classification and the confidence of that classification. The score is an indication of the closeness of the match to the training instances. The confidence is computed as the difference between the score of the classification and the score of the next-highest classification.</p>
+<p>The OCR Dictionary Fielding tool provides functionality to verify and correct strings read by the OCR Classifier. There are two secondary usages:</p>
+<ul>
+<li>OCR result verification: in this usage, you try to determine whether the OCR result is correct or not by comparing it against acceptable results specified via fielding.</li>
+<li>OCR result correction: in this usage, the raw OCR result string is not among the acceptable results. The user tries to find an acceptable string allowed by the field that is closest to raw OCR result string. </li>
+</ul>
+<p>The OCR Dictionary Fielding tool also allows for the possibility of multiple candidates for each character in the input string.</p>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>Enables or disables the tool. (default = Yes)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Tolerances and limits</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Validate paragraph</td>
+<td>Enables or disables paragraphs validation. (default = No)<blockquote> <strong>Accept null paragraphs</strong><br>Accept empty paragraphs. (default = No)<br>  <strong>Wildcard</strong><br>Enter wildcard characters. These are used as wildcards or "don't care" characters, when the paragraph is validated.<br>  <strong>Valid codes</strong><br>Enter valid codes for validation, separated by "," (comma).<br> </blockquote></td>
+</tr>
+<tr>
+<td>Shape index</td>
+<td>Enables shape index limit. (default = No)<blockquote> <strong>shape index limit</strong><br>Classification score. (default = 1.0)<br> </blockquote></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Analysis</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of regions</td>
+<td>Paragraph to be searched can be distributed into different image regions. (default = 1)</td>
+</tr>
+<tr>
+<td>Font</td>
+<td>Select font. It is the font used by the OCR Tool to look for matching (classification) of characters. These fonts are available and exportable into external files. Fonts are shared into PROINSPECT and each time they are modified (a new character model is added) all OCR Tools into the recipe gets updated.</td>
+</tr>
+<tr>
+<td>Learn Font</td>
+<td>This button opens Learn font dialog.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Segmentation</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text colour</td>
+<td>Set the polarity of the characters. <ud> <li>Automatic (default)<br>Polarity is automatically determined. Automatic polarity detection might fail for very noisy backgrounds.</li>  <li>Dark on light background<br>Dark characters on light background. Polarity specification decreases execution time.</li>  <li>Light on dark background<br>Light characters on dark background. Polarity specification decreases execution time.</li> </ud></td>
+</tr>
+<tr>
+<td>Angular range</td>
+<td>half of the angle search range. The line angle search range is centered on the xRotation of the affine rectangle used as the ROI for the segmenter. In other words, the full search range is [xRotation - angleHalfRange, xRotation + angleHalfRange]. Increasing angleHalfRange increases the segmenter's run time. Setting angleHalfRange to 0 effectively disables angle search. (default = 0.00)</td>
+</tr>
+<tr>
+<td>Skew range</td>
+<td>half of the skew search range. The line skew search range is centered on the skew of the affine rectangle used as the ROI for the segmenter. In other words, the full search range is [skew - skewHalfRange, skew + skewHalfRange]. Increasing skewHalfRange increases the segmenter's run time. skewHalfRange to 0 effectively disables skew search. (default = 0.00)</td>
+</tr>
+<tr>
+<td>Filter strokes</td>
+<td>whether to remove from the normalized image everything that does not appear to have the same stroke width as the rest of the image. This can be useful if, for example, characters appear to be connected to each other by thin noise streaks. However, using the stroke width filter might incorrectly remove real characters if the widths are inconsistent. (default = Yes)</td>
+</tr>
+<tr>
+<td>Grey level foreground modifier</td>
+<td>a modifier in the range [0, 1] that is used to compute the binarization threshold, in the normalized image, that binarizes between foreground and background. (default = 0.5)</td>
+</tr>
+<tr>
+<td>Ignore border fragments</td>
+<td>whether to completely ignore any fragments that touch any border of the ROI. Ignoring such fragments can be useful for excluding non-text features such as the edges of labels that might be included within the ROI. (default = Yes)</td>
+</tr>
+<tr>
+<td>Contrast threshold</td>
+<td>he minimum amount of contrast (in normalized image greylevels) that a fragment must have, relative to the binarization threshold, in order to be considered for possible inclusion in a character. Any character fragment with a contrast lower than this value is completely ignored for all further processing, as though that fragment had never been detected. (default = 30.0)</td>
+</tr>
+<tr>
+<td>Fragment max distance to main line</td>
+<td>maximum distance a fragment can have outside the main line of characters as percentage of estimated line height. Fragments that overlap the mainline by at least 50% get included regardless of the value of this parameter. (default = 0.0)</td>
+</tr>
+<tr>
+<td>Min. fragment (pixel)</td>
+<td>the minimum number of foreground (i.e. text) pixels that a character fragment must have in order to be considered for possible inclusion in a character. A character fragment is a blob in the binarized image. Character fragments that contain fewer foreground pixels than this value are completely ignored for all further processing, as though that fragment had never been detected. (default = 15)</td>
+</tr>
+<tr>
+<td>Fragments merge mode</td>
+<td>Smode used to determine whether to merge two fragments into one character during the Group stage.<ud> <li>Horizontal overlap (default)<br>Character fragments must overlap horizontally by at least one pixel to be merged. The amount of overlap required is specified by Min. overlap</li>  <li>Min space between characters<br>Character fragments with a horizontal gap between them may be merged to form characters, where any two fragments with a gap less than Min space between characters (pixel) will be merged.</li>  <li>Min and max space between characters<br>Character fragments with a horizontal gap between them may be merged to form characters, with the decision to merge two fragments based on both Min. space between characters (pixel) and Max. space between characters (pixel).</li> </ud></td>
+</tr>
+<tr>
+<td>Min overlap</td>
+<td>the minimum fraction by which two character fragments must overlap each other in the x-direction for the two fragments to be considered part of the same character. (default = 0.00; min = 0.00; max = 1.00)</td>
+</tr>
+<tr>
+<td>Min. space between characters (pixel)</td>
+<td>the minimum gap size, in pixels, that can occur between two characters. If the gap between two fragments is smaller than this, then they must be considered to be part of the same character, unless the combined character would be too wide . The gap is measured from the right edge of the mark rectangle of one character to the left edge of the mark rectangle of the next character. (default = 1)</td>
+</tr>
+<tr>
+<td>Max. space between characters (pixel)</td>
+<td>the maximum gap size, in pixels, that can occur within a single character, even for damaged characters. Any gap larger than this value is always interpreted as a break between two separate characters, whereas gaps less than or equal to this value may be interpreted either as a break between two separate characters or as a gap within a single character. (default = 0.00)</td>
+</tr>
+<tr>
+<td>Min number of pixels per characters</td>
+<td>the minimum number of foreground (text) pixels that a character must have in order to be reported. Stage. (default = 30.0)</td>
+</tr>
+<tr>
+<td>Min character width (pixel)</td>
+<td>the minimum width of a character’s mark rectangle, in pixels, that a character must have to be reported. (default = 3.0)</td>
+</tr>
+<tr>
+<td>Use max character width</td>
+<td>Set whether to use Max character width (pixel) to split wide characters. (default = No)<blockquote> <strong>Max character width (pixel)</strong><br>Sets the maximum allowable width of a character’s mark rectangle in pixels. A character wider than this value is split into pieces that are not too wide. (default = 100.0)<br> </blockquote></td>
+</tr>
+<tr>
+<td>Min character height (pixel)</td>
+<td>Sets the minimum height of a character’s mark rectangle, in pixels, that a character must have to be reported. (default = 3.0)</td>
+</tr>
+<tr>
+<td>Use max character height</td>
+<td>Sets whether to use Max character height (pixel) to limit the maximum height of a character and/or the line of characters. (default = No)<blockquote> <strong>Max character height (pixel)</strong><br>Sets the maximum allowable height of a character’s mark rectangle, in pixels. This value is used in two ways. First, this value is used when finding the line as a whole; for example, to reject vertically adjacent noise and/or other lines of vertically adjacent characters. Second, an individual character whose height exceeds this value will be trimmed to meet this height. Stage. (default = 100.0)<br> </blockquote></td>
+</tr>
+<tr>
+<td>Use min aspect</td>
+<td>Sets whether to use Min aspect to split wide characters.  (default = Yes) <blockquote> <strong>Min aspect</strong><br>Sets the minimum allowable aspect of a character, where the aspect is defined as the height of the entire line of characters divided by the width of the character’s mark rectangle. A character whose aspect is smaller than this value (that is, whose width is too large) is split into pieces that are not too wide. (default = 0.8)<br> </blockquote></td>
+</tr>
+<tr>
+<td>Insert spaces</td>
+<td>Sets the insert mode, which specifies how to handle insertion of space characters into gaps between other characters.<ud> <li>None (default)<br>Never insert a space character, no matter how large an intercharacter gap is.</li>  <li>Single<br>Insert at most one space character per intercharacter gap, no matter how large the gap is.</li>  <li>Multiple<br>Insert a number of space characters (zero or more) per intercharacter gap based on how large the gap is.</li> </ud><blockquote> <strong>Space score mode</strong><br>Sets the score mode, which specifies how to handle scoring of space characters.            ONE       Space characters always get a score of 1.0.          Clutter (default)      The score of a space character is based on the fraction of pixels that are background. A space character that consists entirely of background receives a score of 1.0.<br>  <strong>Min space width</strong><br>Sets the minimum width of a space character, in pixels. (default = 10.0)<br>  <strong>Max space width</strong><br>Sets the maximum width of a space character, in pixels. (default = 100.0)<br> </blockquote></td>
+</tr>
+<tr>
+<td>Min pitch</td>
+<td>Sets the minimum pitch, in pixels, that can occur between two characters. If the pitch between two fragments is smaller than this, then they must be considered to be part of the same character, unless the combined character would be too wide (as specified by Max character width (pixel)and/or Min aspect). (default = 0.0)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Classification</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept threshold</td>
+<td>Minimum score for a character in order to be classified. (default = 0.50)</td>
+</tr>
+<tr>
+<td>Confidence threshold</td>
+<td>Minimum confidence value. Confidence is the difference between score values of the best and 2nd best match. (default = 0.00)</td>
+</tr>
+<tr>
+<td>Use filter for scale X</td>
+<td>Enable filter for X scale. X scale filter range is used for skipping candidate classes/instances whose rectified training image’s x-size (that is, width) is beyond the range specified here. (default = Yes)<blockquote> <strong>Limit down</strong><br>Lower limit value for scaling. (default = 0.67)<br>  <strong>Limit up</strong><br>Upper limit value for scaling. (default value = 1.50)<br> </blockquote></td>
+</tr>
+<tr>
+<td>Use filter for scale Y</td>
+<td>Enable filter for Y scale. Y-scale filter range is used for skipping candidate classes/instances whose rectified training image’s y-size (that is, height) is beyond the range specified here. (default = Yes)<blockquote> <strong>Limit down</strong><br>Lower limit value for scaling. (default = 0.67)<br>  <strong>Limit up</strong><br>Upper limit value for scaling. (default value = 1.50)<br> </blockquote></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Fielding</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max number of positions</td>
+<td>Must fit to number of classified or positions, otherwise fielding results are not displayed. (default = 3.0)</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>Select position to specifying the acceptable choices for a character in this position.<blockquote> <strong>Number</strong><br>Characters 0 through 9. (default = No)<br>  <strong>Alfa-uppercase</strong><br>Characters A through Z. (default = No)<br>  <strong>Alfa-lowercase</strong><br>Characters a through z. (default = No)<br>  <strong>Space</strong><br>The space character (UTF-32 character code 0x20). (default = No)<br>  <strong>Any non space</strong><br>Any character not in the Cognex-reserved UTF-32 code ranges except the space character whose UTF-32 character code is 0x20. This does include other white spaces, for example, character codes 0x09 through 0x0D. (default = Yes)<br>  <strong>Additional characters</strong><br>Characters that can be assumed.<br> </blockquote></td>
+</tr>
+</tbody>
+</table>
+<h3 id="more">More</h3>
+<p>Click <a href="../../../../Windows/dialog_settings/">here</a> to access the More section description.</p>
+<h2 id="learn-font">Learn font</h2>
+<p>This dialog is accessed pressing button</p>
+<pre><code>Analisys &gt; Learn font.
+</code></pre>
+<h3 id="consoles">Consoles</h3>
+<p>This dialog has two image consoles.</p>
+<ul>
+<li>Image console Image confined within the tool search area is displayed. Fonts console For each character the associated image is displayed.</li>
+<li>Image console displays rectangles associated to each character after the classification process. These rectangles can be selected to identify the currently selected character of the dialog.</li>
+</ul>
+<p>Selection of a rectangle allows to make some operations of association of the represented image to a character of the font. If one rectangle is identified by a "?" (question mark) means that the corresponding image is not associated to any character of the font we are going to learn. Else, if the rectangle is marked with a character means that an association exists.</p>
+<p>Fonts console displays areas of the image associated to some characters. Many areas can be associated to the same character.</p>
+<h3 id="edit-single-character">Edit single character</h3>
+<p>Font characters can be individually edited by two groups of controls:</p>
+<ul>
+<li>Read character</li>
+<li>Font character</li>
+</ul>
+<p>To add a character select one of the proposed rectangle in Image console; type the character in Read character &gt; Name and press Read character &gt; Add button.</p>
+<p>Once a character has been added, it will be displayed in the Fonts console. If a read character was associated to a font character, the font character information are displayed. If a character is associated to more than one Font character, the instance index is displayed.</p>
+<h3 id="edit-multiple-characters">Edit multiple characters</h3>
+<p>Font characters can be multiply edited.</p>
+<ul>
+<li>Characters Editable text in which to type the associated character for each rectangle in the Image console.</li>
+<li>Unknown character Type a character that will identify a symbol not recognized as one of the current font alphabet.</li>
+<li>Select all Pressing this button all rectangles in the Image console are used to associate characters</li>
+<li>Deselect If some rectangles have to be deselected, press this button and then click on the rectangle to deselect.</li>
+<li>Add Enter add mode. After pressing, select in Image console the rectangles to add and then press it again.</li>
+<li>Delete Enter delete mode. After pressing, select in Fonts console the characters to delete and then press it again.</li>
+<li>Cancel Exit Add or Delete mode without changes.</li>
+</ul>
+<h3 id="archive">Archive</h3>
+<p>A learned font can be serialized to be used for another OCR tool.</p>
+<ul>
+<li>New Create a new font.</li>
+<li>Save Opens a Save file dialog and the user will be asked to enter the name of the file .ocr to save the font in.</li>
+<li>Load Opens a File open dialog to select a file .ocr that stores the wished font.</li>
+<li>Font name Name of the current font.</li>
+</ul>
+<h2 id="results">Results</h2>
+<table>
+<thead>
+<tr>
+<th>Results</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision</td>
+<td><ud> <li>Good<br>Pass/Fail decision.</li>  <li>Out of tolerance<br>OCR was successfully executed but some validation condition failed.</li>  <li>Reject<br>OCR execution failed.</li> </ud></td>
+</tr>
+<tr>
+<td>Processing time</td>
+<td>Tool processing time in msec.</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>Result code.</td>
+</tr>
+<tr>
+<td>Score</td>
+<td>Tool score.</td>
+</tr>
+<tr>
+<td>Fielding computed</td>
+<td>Tells whether the fielding operation was successfully executed.</td>
+</tr>
+<tr>
+<td>Fielding code</td>
+<td>Code after fielding process.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>This is the lowest status grade among all position status.</td>
+</tr>
+<tr>
+<td>Fielding position</td>
+<td>Fielded position selection.<blockquote> <strong>Character</strong><br>Fielded character.<br>  <strong>Status</strong><br>Fielded position status.<br> </blockquote></td>
+</tr>
+<tr>
+<td>Classification computed</td>
+<td>Tells whether the classification operation was successfully executed.</td>
+</tr>
+<tr>
+<td>Code classified</td>
+<td>Code after classification process.</td>
+</tr>
+<tr>
+<td>Classified position</td>
+<td>Classified position selection.<blockquote> <strong>Character</strong><br>Classified character.<br>  <strong>Status</strong><br>Classified position status.            Read        Classified with good confidence.          Confused        Classified with poor confidence.          Failed        Failed to classify.<br>  <strong>Instance</strong><br>What instance the classified character is associated to.<br>  <strong>Score</strong><br>Classification result score<br>  <strong>Confidence</strong><br>The confidence score is the difference between primary character score and confusion character score.<br>  <strong>Confusion type</strong><br>Reason that leads to the confused status.            No confusion         Good          Score too low        Confidence score is less than confidence threshold          Failed classification validation        Failed<br>  <strong>Confused character</strong><br>Highest scoring alternative character.<br> </blockquote></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration</h2>
+<p>This tool is included into the library UvfCvlOCR.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.dd8806f2.min.js"></script>
+      
+    
+  </body>
+</html>
