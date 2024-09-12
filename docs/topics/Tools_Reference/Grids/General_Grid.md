@@ -15,13 +15,13 @@ Settings
 | Options | |
 | --- | --- |
 | Enable | Enables or disables the tool. (default = Yes) |
-| Position mode | How the grid position is defined.    | Normal (default) | Position is the position of first contained tool. | | --- | --- | | Selective | Position components can be individually selected between the positions of the contained tools. | | X | Select tool to be used as X component.   | (Tools #n) | Use the selected tool's X component. | | --- | --- | | | Y | Select tool to be used as Y component.   | (Tools #n) | Use the selected tool's Y component. | | --- | --- | | | Angle | Select tool to be used as Angle component.   | (Tools #n) | Use the selected tool's Angle component. | | --- | --- | | |
+| Position mode | How the grid position is defined. <br><blockquote> **Normal** (default) <br> Position is the position of first contained tool. <br> **Selective** <br> Position components can be individually selected between the positions of the contained tools. <br> **X**  Select tool to be used as X component.   <br> <ud><li> (Tools #n) <br> Use the selected tool's X component. </ud></li> **Y** <br> Select tool to be used as Y component.   <br> <ud><li> (Tools #n) <br> Use the selected tool's Y component. </ud></li>**Angle** <br> Select tool to be used as Angle component.   <br> <ud><li> (Tools #n) <br> Use the selected tool's Angle component. </ud></li></blockquote>
 | Local tuning | Tool expected position in an iteration is adjusted with the result found in the preceding cell. It is a recursive pre-alignment(default = No) |
 | Geometry | Defines tool's region shape.<ud> <li>Circle<br>Circular shape.</li>  <li>General rectangle (default)<br>Rectangular shape.</li>  <li>Annulus<br>Annulus shape.</li>  <li>General polygon<br>General polygon shape.</li>  <li>LineSeg<br>Segment shape.</li>  <li>Ellipse arc<br>Ellipse arc shape.</li> </ud> |
 
 | Tolerances and limits | |
 | --- | --- |
-| Check results count | Enables or disables results count condition. Condition fails if number of good results don't agree with settings.   | None | Disabled | | --- | --- | | Expected number | The expected number of good results | | Less than | Less than number of good results | | Greater than | More than number of good results | | Number of results to find | Enter number of good results. (default = 1) | |
+| Check results count | Enables or disables results count condition. Condition fails if number of good results don't agree with settings.  <br><blockquote> **None** <br> Disabled <br> **Expected number** <br> The expected number of good results <br> **Less than** <br> Less than number of good results <br> **Greater than** <br> More than number of good results <br> **Number of results to find** <br> Enter number of good results. (default = 1) <blockquote> |
 
 | Analysis | |
 | --- | --- |

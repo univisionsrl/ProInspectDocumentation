@@ -7,7 +7,7 @@ Overview
 --------
 
 
-This dialog is accessed by [Search](Search.htm) and [PatMax](PatMax.htm) settings dialog Analysis > Multi model > Edit model.
+This dialog is accessed by [Search](../Pattern_Match/Search.md) and [PatMax](../Pattern_Match/PatMax.md) settings dialog Analysis > Multi model > Edit model.
 
 
 Multimodel

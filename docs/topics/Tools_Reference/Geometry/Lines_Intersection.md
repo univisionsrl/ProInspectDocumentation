@@ -21,7 +21,7 @@ Settings
 | Position offset | Enables or disables position tolerance. Specification position is the trained one and it is defined as the intersection of nominal lines.<blockquote> **Elliptical region**<br>Search area has elliptical region instead of a rectangular one<br>  **Position X tolerance**<br>Position tolerance in the X axes. (default = 10)<br>  **Position Y tolerance**<br>Position tolerance in the Y axes. (default = 10)<br> </blockquote> |
 | Angle offset | Enables or disables orientation tolerance.<blockquote> **Angle+**<br>Tolerance for positive angles. (default = 360; min = 0; max = 360)<br>  **Angle-**<br>Tolerance for negative angles. (default = 360; min = 0; max = 360)<br> </blockquote> |
 | Angle between lines | Enables or disables angle span value condition.<blockquote> **Specification**<br>Expected angle value. (default = 90)<br>  **Tolerance+**<br>Positive tolerance of the measured angle. (default = 10)<br>  **Tolerance-**<br>Negative tolerance of the measured angle. (default = 10)<br> </blockquote> |
-| Distances | Distances between the extrema of the segments that define lines and opposite line. (default = No)  | Specification | Expected distance value. (default = 0) | | --- | --- | | Tolerance+ | Positive tolerance of the measured angle. (default = 10) | | Tolerance- | Negative tolerance of the measured angle. (default = 10) | |
+| Distances | Distances between the extrema of the segments that define lines and opposite line. (default = No)  <br><blockquote> **Specification** <br> Expected distance value. (default = 0) <br> **Tolerance+** <br> Positive tolerance of the measured angle. (default = 10) <br> **Tolerance-** <br> Negative tolerance of the measured angle. (default = 10) </blockquote> |
 
 ### More
 

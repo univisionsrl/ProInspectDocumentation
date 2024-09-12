@@ -29,11 +29,12 @@ Settings
 
 | Analysis | |
 | --- | --- |
-| Color space | Reference color space.   | HSI (default) | Hue-Saturation-Intensity color space. | | --- | --- | | RGB | Red-Green-Blue color space. | |
-| Hue / Red | Range of validity of Hue/Red value. This color range forces a segmentation of the Hue (HIS) or Red (RGB) image plane. All pixels out of (into) this range are masked in Alike mode (Unlike mode). (default = Yes)<blockquote> **Specification**<br>Nominal value. (default = 0)<br>  **Tolerance+**<br>Positive tolerance. (default = 5.00)<br>  **Tolerance-**<br>Positive tolerance. (default = 5.00)<br> </blockquote> |
+| Color space | Reference color space. <ud><li>HSI (default)<br>Hue-Saturation-Intensity color space.</li> <li>RGB <br>Red-Green-Blue color space.</li></ud> |
+| Specification mode | Enabling automatic mode, specification values are automatically generated. (default = Automatic) |
+| Hue / Red | Range of validity of Hue/Red value. This color range forces a segmentation of the Hue (HIS) / Red (RGB) image plane. in **Alike** mode (**Unlike**) all pixels out of (into) this range are masked. (default = Yes)<blockquote> **Specification**<br>Nominal value. (default = 0)<br>  **Tolerance+**<br>Positive tolerance. (default = 5.00)<br>  **Tolerance-**<br>Positive tolerance. (default = 5.00)<br> </blockquote> |
 | Saturation / Green | Range of validity of Saturation/Green value. This color range forces a segmentation of the Saturation (HIS) or Green (RGB) image plane. All pixels out of (into) this range are masked in Alike mode (Unlike mode). (default = No)<blockquote> **Specification**<br>Nominal value. (default = 0)<br>  **Tolerance+**<br>Positive tolerance. (default = 5.00)<br>  **Tolerance-**<br>Positive tolerance. (default = 5.00)<br> </blockquote> |
 | Intensity / Blue | Range of validity of Intensity/Blue value. This color range forces a segmentation of the Intensity (HIS) or Blue (RGB) image plane. All pixels out of (into) this range are masked in Alike mode (Unlike mode). (default = No)<blockquote> **Specification**<br>Nominal value. (default = 0)<br>  **Tolerance+**<br>Positive tolerance. (default = 5.00)<br>  **Tolerance-**<br>Positive tolerance. (default = 5.00)<br> </blockquote> |
-| Color Selection | Color selection for binarization.<ud> <li>Alike<br>Pixels with value outside the color ranges are masked.</li>  <li>Unalike<br>Pixels with value inside the color ranges are masked.</li> </ud> |
+| Color Selection | Color selection for binarization.<ud> <li>Alike<br>Pixels with value outside the color ranges are masked.</li>  <li>Unlike<br>Pixels with value inside the color ranges are masked.</li> </ud> |
 | Min. Area (pixel) | Area must be greater than this limit to be recognized as blob. |
 
 ### More

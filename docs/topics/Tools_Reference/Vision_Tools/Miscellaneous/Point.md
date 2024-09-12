@@ -14,6 +14,10 @@ Settings
 | Options | |
 | --- | --- |
 | Enable | Enables or disables the tool. (default = Yes) |
+| Geometry | Defines tool's region shape.<ud> <li>Circle<br>Circular shape.</li>  <li>General rectangle (default)<br>Rectangular shape.</li>  <li>Annulus<br>Annulus shape.</li>  <li>General polygon<br>General polygon shape.</li>  <li>CAD (Closed ROI)<br>Closed shape imported from a CAD file.</li> </ud> |
+| CAD file [1](#uno) | CAD file name. |
+| Layer nameDisplayed only when CAD (Closed ROI) geometry is selected. | Lists the layer names defined in the selected CAD file.<blockquote> **Connection tolerance**<br>Distance between close segment points to be considered as connected. (default = 0)<br> </blockquote> |
+| User calibrationDisplayed only when CAD (Closed ROI) geometry is selected. | If checked user defines parameters for CAD shapes calibration. Otherwise tool calibration is used.<blockquote> **axes X rotation**<br>Rotation in the X axes to be applied to the CAD shape. (default = 0; min = -360; max = 360)<br>  **axes Y rotation**<br>Rotation in the Y axes to be applied to the CAD shape. (default = 0; min = -360; max = 360)<br>  **scale X**<br>Scale variation in the X axes to be applied to the CAD shape. You express scale value as a multiplier value. (default = 1)<br>  **scale Y**<br>Scale variation in the Y axes to be applied to the CAD shape. You express scale value as a multiplier value. (default = 1)<br> </blockquote> |
 
 | Tolerances and limits | |
 | --- | --- |
@@ -41,3 +45,5 @@ Configuration
 
 This tool is included into the library UvfStdTools.
 
+### References
+[1](#uno): Displayed only when CAD (Closed ROI) geometry is selected.

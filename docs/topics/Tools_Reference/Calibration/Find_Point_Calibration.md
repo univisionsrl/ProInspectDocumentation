@@ -34,7 +34,7 @@ Settings
 | Line scan correction | Over different lines or the direction of travel (Y, line 1,2,3.. ) only a linear correction is calculated (default = No) Along the line, the selected calibration type is used (e.g. polynomial (3)) |
 | Perspective correction | Deprecated, now use Z-calibration. Moves points relative to the origin according to this linear factor. (default = 1.0) |
 | Number of points | Number of point used to calibrate. The minimum number of point depends of the calibration type selected. |
-| Calibration type | Select the calibration type. Polynomial calibrations are more accurate than linear one and compensate better lens distortion, but requires more points.   | Linear | needs at least 3 points.(default) | | --- | --- | | Polynomial (2) | needs at least 6 points. | | Polynomial (3) | needs at least 10 points. | | Polynomial (4) | needs at least 15 points. | | Polynomial (5) | needs at least 21 points. | |
+| Calibration type | Select the calibration type. Polynomial calibrations are more accurate than linear one and compensate better lens distortion, but requires more points.   <br><ud><li> Linear <br> needs at least 3 points.(default) </li><li> Polynomial (2) <br> needs at least 6 points. </li><li> Polynomial (3) <br> needs at least 10 points. </li><li> Polynomial (4) <br> needs at least 15 points. </li><li> Polynomial (5) <br> needs at least 21 points. </li></ud>
 
 
 

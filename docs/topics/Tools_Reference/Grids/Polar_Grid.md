@@ -14,12 +14,12 @@ Settings
 | Options | |
 | --- | --- |
 | Enable | Enables or disables the tool. (default = Yes) |
-| Position mode | How the grid position is defined.    | Normal (default) | Position is the position of first contained tool. | | --- | --- | | Selective | Position components can be individually selected between the positions of the contained tools. | | X | Select tool to be used as X component.   | (Tools #n) | Use the selected tool's X component. | | --- | --- | | | Y | Select tool to be used as Y component.   | (Tools #n) | Use the selected tool's Y component. | | --- | --- | | | Angle | Select tool to be used as Angle component.   | (Tools #n) | Use the selected tool's Angle component. | | --- | --- | | |
+| Position mode | How the grid position is defined.    <br><blockquote> **Normal** (default) <br> Position is the position of first contained tool. <br> **Selective** <br> Position components can be individually selected between the positions of the contained tools. <br> **X** <br> Select tool to be used as X component. <ud><li>  (Tools #n) <br> Use the selected tool's X component. </li></ud> **Y** <br> Select tool to be used as Y component. <br> <ud><li> (Tools #n) <br> Use the selected tool's Y component.</li></ud> **Angle** <br> Select tool to be used as Angle component. <ud><li> (Tools #n) <br> Use the selected tool's Angle component. </li> </ud>|
 | Local tuning | Tool expected position in an iteration is adjusted with the result found in the preceding point. It is a recursive pre-alignment(default = No) |
 
 | Tolerances and limits | |
 | --- | --- |
-| Check results count | Enables or disables results count condition. Condition fails if number of good results don't agree with settings.   | None | Disabled | | --- | --- | | Expected number | The expected number of good results | | Less than | Less than number of good results | | Greater than | More than number of good results | | Number of results to find | Enter number of good results. (default = 1) | |
+| Check results count | Enables or disables results count condition. Condition fails if number of good results don't agree with settings.  <ud><li> None <br> Disabled </li><li> Expected number <br> The expected number of good results </li><li> Less than <br> Less than number of good results </li><li> Greater than <br> More than number of good results </li><li> Number of results to find <br> Enter number of good results. (default = 1) </li></ud>
 
 | Analysis | |
 | --- | --- |

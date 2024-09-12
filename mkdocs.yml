@@ -1,5 +1,6 @@
 site_name: PROINSPECT User Manual
 site_url: https://example.com/
+use_directory_urls: false
 nav:
   - Home: index.md
   - Getting started:
@@ -16,6 +17,7 @@ nav:
     - Statistics:
       - Statistics: topics\Statistics\Statistics.md
       - Run statistics: topics\Statistics\Run Statistics.md
+      - Save statistics: topics\Statistics\Save_Statistics.md
       - Statistics Alarms: topics\Statistics\Statistics Alarms.md
       - Batch: topics\Statistics\Batch.md
     - Sharing: topics\Recipe\Sharing.md
@@ -143,16 +145,41 @@ nav:
       - VC200: topics\VCxxx\Vision_Controller_VC200.md
       - CPRTVC100: topics\VCxxx\CPRTVC100.md
       - RTVC100ProcessServerServ: topics\VCxxx\RTVC100ProcessServerServ.md
-theme: material
-#plugins:
-  #- with-pdf:
-        #author: Emanuela Baldon
-        #copyright: Univision s.r.l.
-        #cover: true
-        #back_cover: true
-        #cover_title: PROINSPECT
-        #cover_subtitle: User manual
-        #custom_template_path: TEMPLATES PATH
+theme: 
+  name: material
+  logo: img/Univision.png
+  favicon: img/Univision.png
+  custom_dir: docs/templates/
+#  font:
+#    text: Monotype Corsiva
+#extra_css:
+#  - css/pdf_styles.css
+plugins:
+  - with-pdf:
+      #debug_html : true
+      output_path: PROINSPECT User guide.pdf
+      author: Univision Software 
+      copyright: Univision s.r.l.
+      cover: true
+      back_cover: true
+      cover_title: PROINSPECT
+      cover_subtitle: User Guide
+      cover_logo: "aaa"
+      #render_js: true
+
+
+
+
+
+
+
+      #extra_args: --template pdf_template/template.tex
+
+
+
+
+  #    show_anchors: true
+        #custom_temp  late_path: TEMPLATES PATH
         #
         #toc_title: TOC TITLE TEXT
         #heading_shift: false
@@ -172,15 +199,9 @@ theme: material
         #    - src: ...
         #two_columns_level: 3
         #
-        #render_js: true
+        
         #headless_chrome_path: headless-chromium
         #
-        #output_path: any-place/document.pdf
+
         #enabled_if_env: ENABLE_PDF_EXPORT
         #
-        #debug_html: true
-        #show_anchors: true
-        #verbose: true
-#extra_css:
-#  - css/custom.css
-
