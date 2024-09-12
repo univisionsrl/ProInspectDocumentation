@@ -1,0 +1,18 @@
+/* CSS rules specifically for printing and PDF generation */
+
+/* 
+* {
+    font-family: 'Roboto';
+    color:aqua;
+} */
+
+@media print {
+    p {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .sidebar, .navigation {
+        display: none; /* Hide elements not necessary for print */
+    }
+}
+
